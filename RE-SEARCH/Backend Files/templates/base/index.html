@@ -1,0 +1,26 @@
+{% extends "account/base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% block content %}
+
+
+    <div>
+        <h3 style="font-family: Merriweather Sans; font-weight: bold; color:dodgerblue;">
+            {% trans "RE-SEARCH" %}</h3>
+
+        {% if user.is_authenticated %}
+        <p>
+            <h4 style="font-family: Merriweather Sans; font-weight: bold;">
+                Hello, {{user.username}}<br>Welcome to Re-Search</h4></p><br>
+            <p><a href="cluster/"><button class="waves-effect waves-light btn-large "
+                style="background-color: dodgerblue;">
+                View My Clusters</button></a><p>
+        {% else %}
+        <p>
+            <h3 style="font-family: Merriweather Sans; font-weight: bold;">Welcome to Re-Search</h3><br>
+            <a href="accounts/login/">
+            <button class="waves-effect waves-light btn-large" style="background-color: dodgerblue;">
+                Sign in</button></a> to continue.</p>
+        {% endif %}
+    </div>
+{% endblock %}

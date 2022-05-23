@@ -1,0 +1,124 @@
+{% extends "account/base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}{% trans "Search" %}{% endblock %}
+
+{% block content %}
+<br>
+<a href="{% url 'clusters' %}" class="btn-floating btn-tiny waves-effect waves-light blue">
+    <i class="material-icons">arrow_back</i></a>
+
+<P style="font-size:17px; font-family: Merriweather Sans;">You are searching in {{cluster.title}}</P>
+
+<form method="GET" action=""  >
+    {% csrf_token %}
+    <button class="btn btn-primary" style="background-color: dodgerblue;" >Search</button>
+    
+    {% if search is None %}
+        <input id="q" name="qq" type="text"   placeholder="Enter search text here"  style="width: 500px;">
+    {%else%}
+        <input id="q" name="qq" type="text" placeholder="Enter search text here" value="{{search}}"  style="width: 500px;">      
+    {%endif%}
+    <input type="hidden" id='link' name="link" value="">
+
+    <br>
+ 
+
+
+
+</form>
+
+<form method="GET" action="">
+    <button class="btn-floating btn-tiny waves-effect waves-light blue" action="">
+        
+        <i class="material-icons">keyboard_voice</i></button>
+        <!-- Input area for voice search-->
+        
+        <input name="qq" type="text" name="" id="speechToText" placeholder="Speak Something" onclick="record()" style="width: 545px;">   
+</form>
+
+
+    <!-- Below is the script for voice recognition and conversion to text-->
+    <script>
+        function record() {
+            var recognition = new webkitSpeechRecognition();
+            recognition.lang = "en-GB";
+
+            recognition.onresult = function(event) {
+                // console.log(event);
+                document.getElementById('speechToText').value = event.results[0][0].transcript;
+            }
+            recognition.start();
+
+        }
+    </script>
+
+
+<script>
+    function getURL() {
+        let a = window.location.href
+        return a
+    }
+    document.getElementById("link").value = getURL()
+</script>
+
+
+
+{% if hits %}
+    {% for hit in hits%}
+        {%if not empty and forloop.counter <= 1 %}
+         
+            <a href="D:\Test folder (2)\demo1.csv" download>
+            <button class="btn btn-primary" style="margin-left: 1000px;">Export as CSV</button></a>
+
+        {%endif%}
+    {% endfor %}
+{% endif %}
+
+<div style="margin: 5px;">
+    {% if hits %}
+        <table>  
+            {% for hit in hits %}
+            <tr>
+                <td class='lin'>Hit: <a href="{{hit.currnet_url}}" target="_blank">{{hit.currnet_url}}</a></td>
+            </tr>
+            <tr>
+                <td class='content'><p>Content: {{hit.content}}</p></td>
+            </tr>
+            {% empty %}
+                <h3> No search result found </h3>
+            {% endfor %}
+        </table>
+        <!--
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">next</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>-->
+    {% endif %}
+</div>
+
+{% if status %}
+    <h5 style="color: red; font-family: Merriweather Sans;">{{warning}}</h5>
+    <P style="font-size:18px; font-family: Merriweather Sans;" >Possible reasons are:
+        <ul style="list-style-type:disc; font-size:18px;">
+            <li> The Cluster doesn't have any url</li>
+            <li> Existing url(s) are not yet crawled</li>
+        </ul>  
+    </P>
+{% endif %}
+
+{% endblock %}

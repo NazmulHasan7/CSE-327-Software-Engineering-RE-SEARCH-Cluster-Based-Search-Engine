@@ -1,0 +1,62 @@
+{% extends "account/base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}{% trans "Cluster Details" %}{% endblock %}
+
+{% block content %}
+
+<style>
+    #container{
+        text-align: center;
+    }
+</style>
+    
+<br><br>
+<a href="{% url 'clusters' %}" class="btn-floating btn-tiny waves-effect waves-light blue">
+    <i class="material-icons">arrow_back</i></a>
+
+<div id="container" class="z-depth-2" style="width: max-content; border-radius: 7px; 
+    position: absolute; top: 20%; left: 25%; width: 850px;
+    margin-top: -50px; margin-left: -50px; background-color:white">
+
+    <h3 style="font-weight: bold;">Cluster: {{cluster}}</h3>
+    <p>Created on: {{cluster.date_created}} in GMT, UTC +0</p>
+    <p>Last update: {{cluster.date_updated}} in GMT, UTC +0</p>
+    <p>Description: {{cluster.description}}</p>
+    <a href="{% url 'add-url' pk=cluster.id%}">
+        <button class="btn btn-primary" style="background-color: dodgerblue;">Add URL</button></a>
+
+    <h4 style="font-weight: bold;">{% trans "List of added url: " %}</h4>
+
+    {% for url in cluster.urls.all %}
+            URL : <a href="{{url.cluster_url}}">{{url.cluster_url}}</a><br>
+            Crawl Method: {{url.output_type}} &nbsp; &nbsp; 
+            Depth: {{url.depth}} &nbsp; &nbsp; Date Added: {{url.date_added}}<br>
+            <br>
+    {% empty %}
+        <p>You did not add any url</p>
+    {% endfor %}
+    <br><br>
+</div>
+
+<!--pagination
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>-->
+
+{% endblock %}

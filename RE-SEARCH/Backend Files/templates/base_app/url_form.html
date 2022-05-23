@@ -1,0 +1,36 @@
+{% extends "account/base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}{% trans "Add a new url" %}{% endblock %}
+
+{% block content %}
+<style>
+    #container{
+        text-align: center;
+    }
+</style>
+
+<br><br><br>
+&nbsp; &nbsp; &nbsp; &nbsp;
+<a href="{% url 'clusters' %}" class="btn-floating btn-tiny waves-effect waves-light blue">
+    <i class="material-icons">arrow_back</i></a>
+
+<div id="container" class="z-depth-2" style="width: max-content; border-radius: 7px; 
+    position: absolute; top: 25%; left: 28%; width: 700px;
+    margin-top: -50px; margin-left: -50px; background-color:white">
+
+<h3 style="font-family: Merriweather Sans; font-weight: bold;">{% trans "Add an URL" %}</h3>
+
+<form method="POST" action="" style="margin: 50px; margin-top:20px">
+    {% csrf_token %}
+    {{ form|crispy }}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+    {% endif %}
+    <br>
+    <input type="submit" value="Submit" class="btn btn-primary" style="background-color: dodgerblue;"/>
+
+</form>
+
+{% endblock %}

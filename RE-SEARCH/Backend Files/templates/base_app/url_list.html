@@ -1,0 +1,40 @@
+
+{% extends "account/base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% block head_title %}{% trans "Clusters" %}{% endblock %}
+
+{% block content %}
+
+<a href="{% url 'url-create' %}">Add url</a>
+
+<table>
+    {% for url in urls %}
+    <tr>
+        <td>url : {{url.cluster_url}}</td>
+    </tr>
+    {% empty %}
+        <h3> You did not add any url yet </h3>
+    {% endfor %}
+</table>
+
+<!--pagination-->
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+{% endblock %}
