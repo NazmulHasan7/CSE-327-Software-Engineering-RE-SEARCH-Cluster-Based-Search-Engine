@@ -21,7 +21,7 @@ In this data-driven technological era, there is an abundance of data readily acc
 1. User friendly interface on the frontend which would boost up RE-SEARCH and make searching easier and faster.<br>
 2. The users are in charge here, and set their own parameters and search for their desired content. No redundant results which might waste the user’s time.<br>
 3. One of the primary goals of our project is to provide a safe, secured search experience. We do not use or make profit by selling any of the user’s data secretively or deceptively, and only require just their e-mail IDs and a password to register or to login via their other social accounts.<br>
-4. RE-SEARCH makes searching accurate and easy for its users with no strings attached. Users can find whatever they are looking for with ease and its even enjoyable to use.<br><br>
+4. RE-SEARCH makes searching accurate and easy for its users with no strings attached. Users can find whatever they are looking for with ease and its even enjoyable to use.<br>
 The web application RE-SEARCH would also aim to fulfill other quality attributes such as:
    <b>Availability:</b> This software will be available to use at all times for its users as the data would be indexed in a 3rd party service, Elasticsearch and would also provide search functionalities. Temporary unavailability may happen for scheduled maintenance.<br>
    <b>Correctness:</b> This software will provide accurate results based on the links the users provide in clusters and the keywords they will use when they need to search.<br>
