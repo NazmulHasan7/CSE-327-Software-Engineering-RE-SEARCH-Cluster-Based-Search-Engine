@@ -82,4 +82,7 @@ As evaluated, all of the main functionalities of the project are working seamles
 The development of the necessary APIs is finished. The APIs that are successfully built so far are: RegisterAPI, ClusterAPI, UrlAPI, UserAPI. These APIs would provide for registering users, making clusters, adding URLs even outside of the web app. The APIs will work as a middle man between the default database and other platforms. These would be crucial in future to provide cross-platform support for other operating systems such as Android, and iOS.<br>
    <b>Plans for deployment</b>
 The plan is to make this software open for all to use and in order to do that, deployment should be the next step. And as mentioned before, we will provide multi-platform support for Web, Android.
+   
+# Conclusion
+The goal of the project is to build a more user friendly search engine that provides a safer, more secured, and smoother searching experience. That is why RE-SEARCH is designed to make searching very specific for its users. It saves the valuable time for its users. Features like easy to use and attractive user interface, voice searching, wildcard searching, less populated search result and exporting search results make RESEARCH different from other search engines available in web.
 <i>
