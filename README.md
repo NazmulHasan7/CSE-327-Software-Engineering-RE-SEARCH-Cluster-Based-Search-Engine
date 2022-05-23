@@ -44,7 +44,7 @@ was used to enable easy social login feature for the users to use this app.<br>
 
 # Use Case Diagram
 <p align="center">
-  <img height=500 width=350 src="https://user-images.githubusercontent.com/63312173/169749428-d1a91fe6-e081-41ab-ade2-afa415094a18.png">
+  <img height=500 width=450 src="https://user-images.githubusercontent.com/63312173/169749428-d1a91fe6-e081-41ab-ade2-afa415094a18.png">
 </p>
 
 <i>
