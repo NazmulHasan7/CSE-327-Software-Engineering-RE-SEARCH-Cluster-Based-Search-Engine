@@ -1,4 +1,4 @@
-# CSE-327-Software-Engineering-RE-SEARCH-Cluster-Based-Search-Engine
+# <i>CSE-327-Software-Engineering-RE-SEARCH-Cluster-Based-Search-Engine
 RE-SEARCH is a cluster based search engine that makes searching more easier and saves valuable time.
 
 <p align="center">
@@ -25,4 +25,4 @@ In this data-driven technological era, there is an abundance of data readily acc
 <br><i>The web application RE-SEARCH would also aim to fulfill other quality attributes such as:</i><br>
    <b>Availability:</b> This software will be available to use at all times for its users as the data would be indexed in a 3rd party service, Elasticsearch and would also provide search functionalities. Temporary unavailability may happen for scheduled maintenance.<br>
    <b>Correctness:</b> This software will provide accurate results based on the links the users provide in clusters and the keywords they will use when they need to search.<br>
-   <b>Reusability:</b> The users will be able to reuse and search many times on the clusters that they create.<br>
+   <b>Reusability:</b> The users will be able to reuse and search many times on the clusters that they create.<br><i>
