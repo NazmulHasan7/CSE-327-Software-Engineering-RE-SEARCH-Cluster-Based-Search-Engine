@@ -1,0 +1,80 @@
+
+{% extends "account/base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% block head_title %}{% trans "Clusters" %}{% endblock %}
+
+{% block content %}       
+
+<style>
+    #container{
+        text-align: center;
+    }
+</style>
+
+<div id="container" class="z-depth-2" style="width: max-content; border-radius: 7px; 
+    position: absolute; top: 20%; left: 28%; width: 700px;
+    margin-top: -50px; margin-left: -50px; background-color:white">
+
+    <h3 style="font-family: Merriweather Sans; text-align:center; font-weight: bold;">{% trans "Search Clusters" %}</h3>
+    <a href="{% url 'cluster-create' %}">
+        <button class="btn btn-primary" style="background-color: dodgerblue;">
+            Create Search Cluster</button></a>
+    <p style="font-size:17px; text-align:center">Oredered by: Date Created</p>
+    
+    <table class="highlight" style="width: max-content;" align="center">
+        {% for cluster in clusters %}
+        <tr>
+            <td style="font-size:17px; ">{{cluster.title}} &nbsp; </td>
+            <td><a href="{% url 'cluster-search' pk=cluster.id slug=cluster.slug %}">
+                <button class="btn btn-primary" style="background-color: dodgerblue;">
+                    Search</button></a>
+                
+                <a href="{% url 'cluster' pk=cluster.id slug=cluster.slug %}">
+                <button class="btn btn-primary">View</button></a>
+                
+                <a href="{% url 'cluster-update' pk=cluster.id slug=cluster.slug %}">
+                <button class="btn btn-primary" style="background-color:blueviolet;">
+                        Edit</button></a>
+                
+                <a href="{% url 'cluster-delete' pk=cluster.id slug=cluster.slug %}">
+                <button class="btn btn-primary" style="background-color:red;">
+                        Delete</button></a>
+            </td>
+        </tr>
+        
+        {% empty %}
+            <h3> You do not have any cluster </h3>
+        {% endfor %}
+    </table>
+
+    <br><br>
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1" class="btn-floating btn-tiny waves-effect waves-light red">
+                    <i class="material-icons">arrow_back</i></a>
+                
+                <a href="?page={{ page_obj.previous_page_number }}" class="btn-floating btn-tiny waves-effect waves-light blue">
+                    <i class="material-icons">navigate_before</i></a>  
+
+            {% endif %}
+    
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}" class="btn-floating btn-tiny waves-effect waves-light blue">
+                    <i class="material-icons">navigate_next</i></a>
+                
+                <a href="?page={{ page_obj.paginator.num_pages }}" class="btn-floating btn-tiny waves-effect waves-light red">
+                    <i class="material-icons">arrow_forward</i></a>
+            {% endif %}
+        </span>
+    </div>
+    <br>
+</div>
+
+
+{% endblock %}

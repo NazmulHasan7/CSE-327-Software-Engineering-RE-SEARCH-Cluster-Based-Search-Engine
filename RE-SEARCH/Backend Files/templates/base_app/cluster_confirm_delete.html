@@ -1,0 +1,23 @@
+{% extends "account/base.html" %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Delete Cluster" %}{% endblock %}
+
+{% block content %}
+<br><br>
+<a href="{% url 'clusters' %}" class="btn-floating btn-tiny waves-effect waves-light blue">
+    <i class="material-icons">arrow_back</i></a>
+<h2 style="font-weight: bold;">{% trans "Warning" %}</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+    {% endif %}   
+     
+    <p>Once you delete the cluster all the data related to this cluster will be lost.<br>
+    Do you really want to delete this Search Cluster?</p>
+    <input type="submit" value="Delete" class="btn btn-primary" style="background-color: red;"/>
+</form>
+
+{% endblock %}

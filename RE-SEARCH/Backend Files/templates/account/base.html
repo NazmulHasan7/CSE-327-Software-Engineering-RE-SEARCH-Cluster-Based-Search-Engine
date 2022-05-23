@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block head_title %}Re-search{% endblock %}</title>
+    {% block extra_head %}
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('select').formSelect();
+      });
+    </script>
+    
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <link href='https://fonts.googleapis.com/css?family=Merriweather Sans' rel='stylesheet'>
+
+    {% endblock %}
+
+  </head>
+  
+  <body>
+    {% block body %}
+
+    <div>
+      <nav>
+        <div class="nav-wrapper" style="background-color: dodgerblue;">
+          <a href="/cluster" class="brand-logo" style="font-weight: bolder;">&nbsp; RE-SEARCH</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <ul>
+              {% if user.is_authenticated %}
+              <li><i class="material-icons">account_circle</i></li>
+              <li>&nbsp;{{user}}</li>
+              <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
+              <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+              <li><a href= "{% url 'payment' %}" >Donate</a></li>
+              {% else %}
+              <li><a href="{% url 'account_login' %}">Sign In</a></li>
+              <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+              <li><a href= "{% url 'payment' %}" >Donate</a></li>
+              {% endif %}
+            </ul>
+          </ul>
+        </div>
+      </nav>
+
+      {% if messages %}
+        <div>
+          <strong>Messages:</strong>
+          {% for message in messages %}
+              <li>{{message}}</li>
+          {% endfor %}
+          </div>
+      {% endif %}
+    </div>
+
+    <div class="container">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+     <!-- Include the compiled and minified Materialize JavaScript -->
+        <script src=
+        "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js">
+        </script>
+
+    {% endblock %}
+    {% block extra_body %}
+    {% endblock %}
+
+  </body>
+</html>
