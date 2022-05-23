@@ -51,15 +51,15 @@ was used to enable easy social login feature for the users to use this app.<br>
 All of the authentications: social login, login, sign-up, sign out, resetting passwords, adding secondary emails, verifying e-mail IDs were handled using Django Allauth. The corresponding html files were designed and implemented according with the help of relevant tools. The following is a snapshot of the UI of the login
 page and registration.
 <p align="center">
-  <img height=450 width=900 src="https://user-images.githubusercontent.com/63312173/169750128-4630c101-559d-4c50-8402-9e5a8f4ca2af.PNG">
+  <img height=450 width=1000 src="https://user-images.githubusercontent.com/63312173/169750128-4630c101-559d-4c50-8402-9e5a8f4ca2af.PNG">
 </p>
 After a user successfully has logged in to the system, whether by logging in or registering for the first time, the user is able to successfully create “search clusters” with a title and the description for a particular cluster initially. Then the user can create more clusters if they want to. 
 <p align="center">
-  <img height=350 width=800 src="https://user-images.githubusercontent.com/63312173/169750441-ef46fd17-87af-4f87-abfe-159f0aee5886.PNG">
+  <img height=450 width=1000 src="https://user-images.githubusercontent.com/63312173/169750441-ef46fd17-87af-4f87-abfe-159f0aee5886.PNG">
 </p>
 The cluster view page is successfully created with relevant views and html files. There are other options such as search, view, edit, delete are kept on the UI, and they both successfully render those requests with the help of the relevant views and corresponding html pages. The cluster view page has pagination support, and will have multiple pages of clusters if the total amount of clusters exceeds for a particular page. The saved clusters will be stored into the database for particular users in the form of Cluster table, which was a model as we have implemented.
 <p align="center">
-  <img height=450 width=800 src="https://user-images.githubusercontent.com/63312173/169750776-8f7c8dec-3065-4878-a2e9-5d73a5b04562.PNG">
+  <img height=450 width=1000 src="https://user-images.githubusercontent.com/63312173/169750776-8f7c8dec-3065-4878-a2e9-5d73a5b04562.PNG">
 </p>
 The user will be able to add a URL, define the depth of crawl, and the type of data they would like to scrape/crawl. This option is found on the view option for a particular cluster. The URLs and their relevant info are stored in the DB. The scraping triggers upon a set interval after an URL is added. The depth logic, crawling strategies are all defined in the scrape.py file.
 <p align="center">
