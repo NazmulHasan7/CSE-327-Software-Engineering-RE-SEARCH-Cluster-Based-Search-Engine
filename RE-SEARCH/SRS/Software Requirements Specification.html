@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <title>Software Requirements Specification for Re-search</title>
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:18%">
+        <h3 class="w3-bar-item">Table of Content</h3>
+        <h4 class="w3-bar-item"><a href="#Introduction">1.Introduction</a></h4>
+        <ul style="list-style-type:none;">
+            <li><a href="#Purpose" class="w3-bar-item w3-button">1.1 Purpose</a></li>
+            <li><a href="#Document Conventions" class="w3-bar-item w3-button">1.2 Document Conventions</a></li>
+            <li><a href="#Intended Audience and Reading Suggestions" class="w3-bar-item w3-button">1.3 Intended Audience
+                    and Reading Suggestions</a></li>
+            <li><a href="#Product Scope" class="w3-bar-item w3-button">1.4 Product Scope</a></li>
+            <li><a href="#References" class="w3-bar-item w3-button">1.5 References</a></li>
+        </ul>
+        <h4 class="w3-bar-item"><a href="#Overall Description">2. Overall Description</a></h4>
+        <ul style="list-style-type:none;">
+            <li><a href="#Product Perspective" class="w3-bar-item w3-button">2.1 Purpose</a></li>
+            <li><a href="#Product Functions" class="w3-bar-item w3-button">2.2 Product Functions</a></li>
+            <li><a href="#User Classes and Characteristics" class="w3-bar-item w3-button">2.3 User Classes and
+                    Characteristics</a></li>
+            <li><a href="#Operating Environment" class="w3-bar-item w3-button">2.4 Operating Environment</a></li>
+            <li><a href="#Design and Implementation Constraints" class="w3-bar-item w3-button">2.5 Design and
+                    Implementation Constraints</a></li>
+            <li><a href="#User Documentation" class="w3-bar-item w3-button">2.6 User Documentation</a></li>
+            <li><a href="#Assumptions and Dependencies" class="w3-bar-item w3-button">2.7 Assumptions and
+                    Dependencies</a></li>
+        </ul>
+
+        <h4 class="w3-bar-item"><a href="#External Interface Requirements">3. External Interface Requirements</a></h4>
+        <ul style="list-style-type:none;">
+            <li><a href="#User Interfaces" class="w3-bar-item w3-button">3.1 User Interfaces</a></li>
+            <li><a href="#Hardware Interfaces" class="w3-bar-item w3-button">3.2 Hardware Interfaces</a></li>
+            <li><a href="#Software Interfaces" class="w3-bar-item w3-button">3.3 Software Interfaces</a></li>
+            <li><a href="#Communication Interfaces" class="w3-bar-item w3-button">3.4 Communication Interfaces</a></li>
+        </ul>
+
+        <h4 class="w3-bar-item"><a href="#System Features">4. System Features</a></h4>
+        <ul style="list-style-type:none;">
+            <li><a href="#Signup" class="w3-bar-item w3-button">4.1 Signup</a></li>
+            <li><a href="#Login" class="w3-bar-item w3-button">4.2 Login</a></li>
+            <li><a href="#Create search cluster" class="w3-bar-item w3-button">4.3 Create search cluster</a></li>
+            <li><a href="#Modify search cluster" class="w3-bar-item w3-button">4.4 Modify search cluster</a></li>
+            <li><a href="#Search for a keyword from own cluster" class="w3-bar-item w3-button">4.5 Search from cluster</a></li>
+            <li><a href="#Visit webpage" class="w3-bar-item w3-button">4.6 Visit webpage</a></li>
+            <li><a href="#Export search result" class="w3-bar-item w3-button">4.7 Export search result</a></li>
+            <li><a href="#Logout" class="w3-bar-item w3-button">4.8 Logout</a></li>
+            <li><a href="#Add new crawling method as plugin" class="w3-bar-item w3-button">4.9 Add new crawling method</a></li>
+            <li><a href="#Index contents of url form search cluster" class="w3-bar-item w3-button">4.10 Index contents of urls</a></li>
+            <li><a href="#Inform users when their cluster(s) ready to do search operation" class="w3-bar-item w3-button">4.11 Inform user</a></li>
+        </ul>
+        <h4 class="w3-bar-item"><a href="#Other Nonfunctional Requirements">5. Other Nonfunctional Requirements</a></h4>
+        <ul style="list-style-type:none;">
+            <li><a href="#Performance Requirements" class="w3-bar-item w3-button">5.1 Performance Requirements</a></li>
+            <li><a href="#Safety Requirements" class="w3-bar-item w3-button">5.2 Safety Requirements</a></li>
+            <li><a href="#Security Requirements" class="w3-bar-item w3-button">5.3 Security Requirements</a></li>
+            <li><a href="#Software Quality Attributes" class="w3-bar-item w3-button">5.4 Software Quality
+                    Attributesr</a></li>
+            <li><a href="#Business Rules" class="w3-bar-item w3-button">5.5 Business Rules</a></li>
+        </ul>
+         <h4 class="w3-bar-item"><a href="#Other Requirements">6. Other Requirements</a></h4>
+        <ul style="list-style-type:none;"></ul>
+        <h4 class="w3-bar-item"><a href="#Appendix">Appendix</a></h4>
+        <ul style="list-style-type:none;">
+            <li><a href="#Appendix A: Glossary" class="w3-bar-item w3-button">Appendix A: Glossary</a></li>
+            <li><a href="#Appendix B: Analysis Models" class="w3-bar-item w3-button">Appendix B: Analysis Models</a></li>
+            <li><a href="#Appendix C: To Be Determined List" class="w3-bar-item w3-button">Appendix C: To Be Determined List</a></li>
+        </ul> 
+
+    </div>
+    <style>
+        @media print {
+            .w3-sidebar{
+                visibility: hidden;
+            }  
+        }
+        @media print {
+            .w3-container{
+                visibility: hidden;
+            }  
+        }
+        @media print{
+            .content{
+                margin-left: -20%;
+            }
+        }
+        @media screen {
+            .table_of_content{
+                display: none;
+                visibility: hidden;
+                padding-bottom: 50px;
+            } 
+        }
+        table, td, th{
+            table-layout: fixed;
+            width: 100%;
+            border: 1px solid black;
+        }
+        @media screen {
+            .cover{
+                visibility: hidden;
+                display: none;
+            }    
+        }
+        @media screen {
+            .revision{
+                visibility: hidden;
+                display: none;
+            }   
+        }
+        .cover{
+            text-align: right;
+        }
+        .table_of_content{
+            padding-top: 450px;
+        }
+        .revision{
+            padding-bottom: 500px;
+        }
+</style>
+    <body>
+        <div class="container wrapper row">
+
+            <div class="content col-9 mt-5 ps-5">
+                <div style="margin-left:20%">
+                    <div class="w3-container w3-black">
+                        <h1>Software Requirements Specification for Re-search</h1>
+                    </div>
+                    <div class="cover d-none">
+                        <hr>
+                        <h1>Software Requirements Specification</h1>
+                        <h2>for</h2>
+                        <h1>Re-search</h1>
+                        <h3>Version 1.0 approved</h3>
+                        <h3>Prepared by: Samya Sunibir Das, Nazmul Hasan, Mir Muzahedul Islam</h3>
+                        <h3>NSU</h3>
+                        <h3>16-11-2021</h3>
+                    </div>
+
+                    <div class="table_of_content">
+                        <br><br><br><br><br><br><br><br>
+                        
+                        <h3>Table of Content</h3>
+                        <h4>1.Introduction</h4>
+                        <ul>
+                            <li>1.1 Purpose</li>
+                            <li>1.2 Document Conventions</li>
+                            <li>1.3 Intended Audience and Reading Suggestions</li>
+                            <li>1.4 Product Scope</li>
+                            <li>1.5 References</li>
+                        </ul>
+                        <h4>2. Overall Description</h4>
+                        <ul>
+                            <li>2.1 Purpose</li>
+                            <li>2.2 Product Functions</li>
+                            <li>2.3 User Classes and Characteristics</li>
+                            <li>2.4 Operating Environment</li>
+                            <li>2.5 Design and Implementation Constraints</li>
+                            <li>2.6 User Documentation</li>
+                            <li>2.7 Assumptions and Dependencies</li>
+                        </ul>
+                
+                        <h4>3. External Interface Requirements</h4>
+                        <ul>
+                            <li>3.1 User Interfaces</li>
+                            <li>3.2 Hardware Interfaces</li>
+                            <li>3.3 Software Interfaces</li>
+                            <li>3.4 Communication Interfaces</li>
+                        </ul>
+                
+                        <h4>4. System Features</h4>
+                        <ul>
+                            <li>4.1 Signup</li>
+                            <li>4.2 Login</li>
+                            <li>4.3 Create search cluster</li>
+                            <li>4.4 Modify search cluster</li>
+                            <li>4.5 Search from cluster</li>
+                            <li>4.6 Visit webpage</li>
+                            <li>4.7 Export search result</li>
+                            <li>4.8 Logout</li>
+                            <li>4.9 Add new crawling method</li>
+                            <li>4.10 Index contents of urls</li>
+                            <li>4.11 Inform user</li>
+                        </ul>
+                        <h4>5. Other Nonfunctional Requirements</h4>
+                        <ul>
+                            <li>5.1 Performance Requirements</li>
+                            <li>5.2 Safety Requirements</li>
+                            <li>5.3 Security Requirements</li>
+                            <li>5.4 Software Quality Attributes</li>
+                            <li>5.5 Business Rules</li>
+                        </ul>
+                         <h4>6. Other Requirements</h4>
+                        <ul></ul>
+                        <h4>Appendix</h4>
+                        <ul>
+                            <li>Appendix A: Glossary</li>
+                            <li>Appendix B: Analysis Models</li>
+                            <li>Appendix C: To Be Determined List</li>
+                        </ul> 
+                
+                    </div>
+                    <div class="revision d-none">
+                        <h1>Revision History</h1>
+                        <table style="width:100%">
+                          <tr>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Reason For Changes</th>
+                            <th>Version</th>
+                          </tr>
+                          <tr>
+                            <td>Samya Sunibir Das, Nazmul Hasan, Mir Muzahedul Islam</td>
+                            <td>16-11-2021</td>
+                            <td>Creation</td>
+                            <td>1.0</td>
+                          </tr>
+                        </table>
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    </div>
+
+                    <!-- Section 1  -->
+
+                    <h1 id="Introduction">
+                        <span>1. </span>
+                        <span>Introduction</span>
+                    </h1>
+
+                    <h2 id="Purpose">
+                        <span>1.1</span>
+                        <span>Purpose</span>
+                    </h2>
+                    <p>
+                        In this data-driven technological era, there is an abundance of data readily accessible to all
+                        with the
+                        help of search engines. But users, especially researchers and such may face hurdle to get
+                        specific
+                        results for their need with the overwhelming amount of data available. This is where Search
+                        Cluster, a
+                        cluster-based search application comes in to play as its main purpose is to let its users to
+                        search in
+                        their custom-made clusters of links with the type of files the users are looking for. This
+                        document
+                        serves to provide a detailed description of the requirements for the software Re-search,
+                        the
+                        details of its features and functionalities, and the constrains it must run under. This document
+                        is made
+                        for version 1.0 of the software.
+                    </p>
+
+                    <h2 id="Document Conventions">
+                        <span>1.2</span>
+                        <span>Document Conventions</span>
+                    </h2>
+                    <p>Standard document conventions were followed while preparing this document with bold fonts for
+                        main topic
+                        headers, and had larger font size than the sub topics, body texts etc. Sub topics were divided
+                        into
+                        different sections under main topics with the main topic number as the prefix. Priority ratings
+                        in the
+                        later section range from 1 to 9, 9 being the most important and 1 being the least. Special names
+                        and
+                        technical terminology are italicized, which have been explained later in the document in the
+                        glossary
+                        section (Appendix A).</p>
+
+
+
+                    <h2 id="Intended Audience and Reading Suggestions">
+                        <span>1.3</span>
+                        <span>Intended Audience and Reading Suggestions</span>
+                    </h2>
+                    <p>
+                        The intended audiences of this document would be the users, mainly researchers, academics or
+                        students
+                        who intend to use the software and the document would be a very helpful guide for them to start
+                        on as
+                        the SRS covers all of the aspects of the software Re-search in six different sections in an
+                        organized and sequential manner with little to no technical jargons. The readers are suggested
+                        to go
+                        through all of the sections to get a good grasp about the ins and outs of the software. The
+                        first
+                        section gives an introduction of the product, the second section deals with the descriptions
+                        about its
+                        functions, classes and such. The third section illustrates all of the external interface
+                        requirements,
+                        fourth section talks about the software's features. Fifth and Sixth sections deal with various
+                        other
+                        requirements.
+                    </p>
+
+                    <h2 id="Product Scope">
+                        <span>1.4</span>
+                        <span>Product Scope</span>
+                    </h2>
+                    <p>Re-search is designed to make searching very specific for its users. Users will be able to
+                        set their
+                        own clusters of links and will be able to define search methods based on textual file types such
+                        as:
+                        pdf, txt, doc etc. Users then will be able to search for keywords within the clusters to get
+                        intended
+                        results. The software serves to make researching easier for its users as other conventional
+                        search
+                        engines can often provide overwhelming number of results or data that can make the research very
+                        cumbersome. </p>
+
+
+
+                    <h2 id="References">
+                        <span>1.5</span>
+                        <span>References</span>
+                    </h2>
+                    <ul>
+                        <li><a href="https://www.djangoproject.com/">Django Framework</a></li>
+                        <li><a href="https://lucene.apache.org/">Apache Lucene</a></li>
+                        <li><a href="https://scrapy.org/">Scrapy Web Crawler</a></li>
+
+
+                    </ul>
+                    <!-- Section 2  -->
+
+                    <h1 id="Overall Description">
+                        <span>2.</span>
+                        <span>Overall Description</span>
+                    </h1>
+
+                    <h2 id="Product Perspective">
+                        <span>2.1</span>
+                        <span>Product Perspective</span>
+                    </h2>
+                    <p>
+                        Re-search is an application that enables user to search within website of their selection.
+                        Typical
+                        Google
+                        search comb through the entire internet. This can be useful for most cases but for certain case
+                        like
+                        research,
+                        data manipulation restricted search can be useful.
+                    </p>
+
+                    <h2 id="Product Functions">
+                        <span>2.2</span>
+                        <span>Product Functions</span>
+                    </h2>
+
+
+                    <ul>
+                        <li>Admin can create or add new search method.</li>
+                        <li>User can create their profile. They can create a search cluster containing one or multiple
+                            website
+                            and they
+                            also choose the search method such as text, pdf, ppt etc. Once cluster been created he will
+                            get a
+                            confirmation
+                            message when search function is applicable.</li>
+                        <li>User can search for a keyword from his own cluster and view those result also visit the url
+                            that
+                            contains
+                            his search keywords. He can export his search result page into a xml file.</li>
+
+                    </ul>
+
+                    
+                    <h2 id="User Classes and Characteristics">
+                        <span>2.3</span>
+                        <span>User Classes and Characteristics</span>
+                    </h2>
+                    <p>Admin: Add new search method as plugins. They will have control over crawling methods.</p>
+                    <p>Client: They will have acces to their account. They can create search cluster and do search from there. Client will
+                        have limited class privilege. They can only use service but can not modify them.</p>
+                    <h2 id="Operating Environment">
+                        <span>2.4</span>
+                        <span>Operating Environment</span>
+                    </h2>
+                    <p>The software , hardware platform,operating system and versions, and any other software components
+                        or
+                        applications which we are using here are-</p>
+                        <p> Requirement for web application:</p>
+                    <ul>
+                        
+                        <li>Pc Web Browser:</li>
+                        <ul>
+                            <li>Chrome v89+</li>
+                            <li>Firefox v78</li>
+                            <li>Safari v12+</li>
+                            <li>Edge v44+</li>
+                            <li>Any other modern web browser</li>
+                        </ul>
+
+                        
+                        <li>Mobile Web Browser:</li>
+                        <ul>
+                            <li>Safari 12+</li>
+                            <li>Chrome 77+</li>
+                        </ul>
+
+                    </ul>
+                    <p>Requirement for andriod app: </p>
+
+                    <li>Moblie Apps OS:</li>
+                    <ul>
+                        <li>Andriod: Adndriod devices with Andriod 7+</li>
+                        <li>iOS: iPhone 5s devices and later with iOS 12.1+</li>
+                    </ul>
+
+                    <h2 id="Design and Implementation Constraints">
+                        <span>2.5</span>
+                        <span>Design and Implementation Constraints</span>
+                    </h2>
+                    <p>
+                        After creating search cluster user need to wait upto 24 hours to scrape the data. When the data
+                        are
+                        ready for search
+                        operation then user will be notified. Also some website restrict crawling operation so user will
+                        be
+                        responsible for such operation.
+                    </p>
+
+                    <h2 id="User Documentation">
+                        <span>2.6</span>
+                        <span>User Documentation</span>
+                    </h2>
+                    <p>FAQ and tutorial will be provided in the home page.</p>
+
+                    <h2 id="Assumptions and Dependencies">
+                        <span>2.7</span>
+                        <span>Assumptions and Dependencies</span>
+                    </h2>
+                    <p>Not applicable</p>
+
+                    <!--Section 3: Software requirement Specification-->
+
+                    <h1 id="External Interface Requirements">
+                        <span>3. External Interface Requirements</span>
+                    </h1>
+
+                    <h2 id="User Interfaces">
+                        <span>3.1</span>
+                        <span>User Interfaces</span>
+                    </h2>
+                    <p>
+                        The user interface will provide users with a way of interacting with the Re-search
+                        application. It will be the
+                        first thing that the user will notice. The Re-search user interface will be designed in
+                        such a way so that the
+                        users can quickly figure out how to use the application. The Re-search application contains
+                        following user interfaces:
+                    </p>
+                    <ul>
+                        <li>
+                            <p>
+                                Login page will accept user id and password to authenticate registered users. It will
+                                also provide options like
+                                Registration and Sign up using Google for new users.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                After successful registration or login, the home page will appear with a menu; where the
+                                user will be able to find the
+                                options 'Create a new cluster' and 'View existing clusters' to see the clusters the user
+                                will create.
+                                The users will be able select options from the menu that will redirect the specific page
+                                or screen. If a user faces any
+                                difficulties to understand the functionality, then he/she can seek for help by clicking
+                                Help button.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                In each Cluster page, the URLs user has added will be shown in a table. There will be a
+                                button to add URL, a search box
+                                that can accommodate 50 characters so that the users can write longer queries being able
+                                to see the see the search text
+                                and check the typos, and a dropdown menu to select to the type of output user wants.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Search results will be shown in a different page or screen in a paginated view for web
+                                application. It also has an Export
+                                button. User can click the button to export search results. The mobile application user
+                                interface is a bit different.
+                                It has the options to sign in and search. Search results in the mobile application are
+                                shown in list view. It will also
+                                have the Export option to export search result.
+                            </p>
+                        </li>
+                        </ul>
+
+                        <h2 id="Hardware Interfaces">
+                            <span>3.2</span>
+                            <span>Hardware Interfaces</span>
+                        </h2>
+                        <p>
+                            Since the main purpose of the application is searching, an active internet connection is
+                            required to communicate with the
+                            server, to fetch search results and to make API calls. There is no such special requirement
+                            of hardware for the Search
+                            Cluster application as crawl data from websites will be stored in the server. However, a
+                            clear and working microphone is
+                            required for the mobile application to perform search via voice command.
+                        </p>
+
+                        <h2 id="Software Interfaces">
+                            <span>3.3</span>
+                            <span>Software Interfaces</span>
+                        </h2>
+                        <p>
+                            The Re-search web application will run on any operating system that is capable with
+                            modern web browsers. Both the
+                            android and web application will communicate with database via internet. Django is used to
+                            interact with the centralized
+                            server, while Djnago default database SQLite is used to store data. The android application
+                            will communicate with the
+                            backend via REST API.
+                        </p>
+                        <p>
+                            Scrapy is used for web scraping. It is an open-source web-crawling framework which is free.
+                            Scrapy provides all the tools
+                            and efficient ways to extract data from websites, process them and store them in a preferred
+                            format and structure. Apache
+                            Lucene will be used for indexing and searching data in a more efficient way. It is an open
+                            source search engine library
+                            that provides powerful features for indexing and searching.
+                        </p>
+
+                        <h2 id="Communication Interfaces">
+                            <span>3.4</span>
+                            <span>Communication Interfaces</span>
+                        </h2>
+                        <p>
+                            The Re-search application will use standard HTTP protocol communication. Sign up
+                            authentication will be done via
+                            email. After creating a Search cluster the user have to wait until the system crawls data
+                            from user’s preferred websites.
+                            The system will notify the user via email once it becomes ready to perform search operation.
+                            All these will be done
+                            through HTTP requests.
+                        </p>
+                    </ul>
+
+                    <!-- End of Section 3 -->
+
+                    <!-- Section 4  -->
+
+                    
+                    </h1>
+                    <h1 id="System Features">
+                        <span>4.</span>
+                        <span>System Features</span>
+                    </h1>
+                    <p>
+                        The users will use the Re-search software, admin will control the
+                        search method and fianlly system will do some automated task.
+                    </p>
+                    <img src="case diagram.jpg" class="w-100" alt="">
+
+                    <h2 id="Signup">
+                        <span>4.1 </span>
+                        <span>Signup</span>
+                    </h2>
+                    <p>
+                        <strong>Use Case Name: &emsp;</strong> Signup<br>
+                        <strong>Precondition: &emsp;</strong> None<br>
+                        <strong>Actor(s): &emsp;</strong> Client<br>
+                        <strong>Goal: &emsp;</strong> To create a user account.<br>
+                    </p>
+                    <p>
+                        <strong>Overview: &emsp;</strong> The client will create their account to use this application. They need
+                        to provide a valid email and password to create their account. Clients can sign up using their Google accounts also. 
+                        The user information is saved in the database.<br>
+                        <strong>Priority: &emsp;</strong> High<br>
+                    </p>
+
+                    <table>
+                        <tr>
+                            <th>Actor actions</th>
+                            <th>System responses</th>
+                        </tr>
+                        <tr>
+                            <td>1. The user enters email and password and then clicks on "Signup" button</td>
+                           <td>2. Authenticates the user information.</td>
+                       </tr>
+                       <tr>
+                            <td></td>
+                            <td>3. Stores user information in the database.</td>
+                       </tr>
+                       <tr>
+                            <td></td>
+                            <td>4. Displays account created successfully.</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <strong>Alternative courses: </strong>
+                    <p>
+                        Step 1-2: User can also use Google signup method instead of entering email and password. 
+                       The system will automatically create user account based on Google authentication.
+                    <br>
+                    </p>
+
+                    <h2 id="Login">
+                        <span>4.2 </span>
+                        <span>Login</span>
+                    </h2>
+                    <p>
+                        <strong>Use Case Name: &emsp;</strong> Login<br>
+                        <strong>Precondition: &emsp;</strong> User account must be created.<br>
+                        <strong>Actor(s): &emsp;</strong> Admin, client<br>
+                        <strong>Goal: &emsp;</strong> The user will be able to log into the system.<br>
+                    </p>
+
+                    <p>
+                        <strong>Overview: &emsp;</strong> Actor enters valid email and password to log in. Then the actor is 
+                        redirected to the home page or screen based to the type of actor. <br>
+                        <strong>Priority: &emsp;</strong> High<br>
+                    </p>
+
+                    <table>
+                        <tr>
+                            <th>Actor actions</th>
+                            <th>System responses</th>
+                        </tr>
+                             <td>1. The user enters their email and password and then click on "Login" button</td>
+                            <td>2. Identifies the user.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>3. Redirects the user to the respective home page.</td>
+                
+                        <tr>
+                        </tr>
+                    </table>
+                    <br>
+                    <strong>Alternative courses: </strong>
+                    <p>
+                      Step 1: User can use google login method instead of entering email and password. The system
+                     automatically verifies the user account and accepts login request.
+                    <br>
+                      Step 2-3: User enters invalid email or password. The system fails to identify the user and it will ask user to enter 
+                     information again in that case.
+                    </p>
+
+
+                    <h2 id="Create search cluster">
+                        <span>4.3 </span>
+                        <span>Create search cluster</span>
+                    </h2>
+                    <p>
+                        <strong>Use Case Name: &emsp;</strong> Create search cluster.<br>
+                       <strong>Precondition: &emsp;</strong> Client account must be created and Client must be logged in.<br>
+                       <strong>Actor(s): &emsp;</strong> Client<br>
+                       <strong>Goal: &emsp;</strong> To create a search cluster.<br>
+                    </p>
+
+                    <p>
+                        <strong>Overview: &emsp;</strong> The Client will create search cluster. Each cluster can have one or multiple urls. 
+                       Clients will decide the crawling method, wheather it will be pdf, text or any other system provided crawling
+                       method.They can name their cluster according to their choice.<br>
+                        <strong>Priority: &emsp;</strong> High<br>
+                    </p>
+
+                    <table>
+                        <tr>
+                            <th>Actor actions</th>
+                            <th>System responses</th>
+                        </tr>
+                        <tr>
+                            <td>1.  The Client will set a name for the Cluster and click on “Create cluster” button.</td>
+                            <td>2. Stores cluster details in database.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>3. Displays Cluster created successfully.</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <strong>Alternative courses: </strong>
+                    <p>
+                        Step 2-3: The client might cancel the cluster creation process. 
+                    </p>
+                    
+                    <h2 id="Modify search cluster">
+                      <span>4.4 </span>
+                      <span>Modify search cluster</span>
+                    </h2>
+                    <p>
+                      <strong>Use Case Name: &emsp;</strong> Modify search cluster.<br>
+                      <strong>Precondition: &emsp;</strong> Search cluster must be created.<br>
+                      <strong>Actor(s): &emsp;</strong> Client<br>
+                      <strong>Goal: &emsp;</strong> Client can modify own created cluster and add new urls.<br>
+                    </p>
+                    <p>
+                      <strong>Overview: &emsp;</strong> The client will be able add new urls along with search
+                        depth to an existing search cluster.  <br>
+                      <strong>Priority: &emsp;</strong> Medium<br>
+                    </p>
+
+                    <table>
+                      <tr>
+                          <th>Actor actions</th>
+                          <th>System responses</th>
+                      </tr>
+                      <tr>
+                          <td>1. The client selects an existing cluster.</td>
+                         <td>2. Displays cluster details along with add url option. </td>
+                      </tr>
+                      <tr>
+                          <td>3. The clinet selects add url option.</td>
+                          <td>4. Displays text box along with set depth option.</td>
+                      </tr>
+                      <tr>
+                          <td>5. The client adds a new url with search depth.</td>
+                          <td>6. Stores url and search depth for the cluster in the database.</td>
+                      </tr>
+                    </table>
+
+                    <br>
+                        <strong>Alternative courses: </strong>
+                    <p>
+                          Step 3-6: The client might not want to modify cluster. The process is terminated.
+                    </p>
+
+                    <h2 id="Search for a keyword from own cluster">
+                        <span>4.5 </span>
+                        <span>Search for a keyword from own cluster</span>
+                    </h2>
+                    <p>
+                        <strong>Use Case Name: &emsp;</strong> Search for a keyword from own cluster.<br>
+                        <strong>Precondition: &emsp;</strong> Search cluster must be created.<br>
+                        <strong>Actor(s): &emsp;</strong> Client<br>
+                        <strong>Goal: &emsp;</strong> Client search for a keyword from their cluster.<br>
+                    </p>
+                    <p>
+                        <strong>Overview: &emsp;</strong> The client will be able to do search operation. The Client selects own created 
+                        cluster and search a keyword. They system shows the search result in a paginated view. <br>
+                        <strong>Priority: &emsp;</strong> High<br>
+                    </p>
+
+                    <table>
+                        <tr>
+                            <th>Actor actions</th>
+                            <th>System responses</th>
+                        </tr>
+                        <tr>
+                            <td>1. The client enters a keyword and click of the “Search” button.</td>
+                           <td>2. Searches for that keyword from specified search cluster’s urls. </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>3. Displays matching search results in a paginated view.</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <strong>Alternative courses: </strong>
+                    <p>
+                        Step 3-4: Search Cluster is not yet ready to perform search operation. System displays a warning message.<br> 
+                       Step 4: Could not find any matching result for the given text. System displays no such result found. 
+                    </p>
+
+
+                    <h2 id="Visit webpage">
+                        <span>4.6 </span>
+                        <span>Visit webpage</span>
+                    </h2>
+                    <p>
+                        <strong>Use Case Name: &emsp;</strong> Visit webpage<br>
+                        <strong>Precondition: &emsp;</strong> Client must do a search operation.<br>
+                        <strong>Actor(s): &emsp;</strong> Client<br>
+                        <strong>Goal: &emsp;</strong> To visit a webpage that is containing the matching search result.<br>
+                    </p>
+                    <p>
+                        <strong>Overview: &emsp;</strong> The client will be able to see the list of website that
+                        contains his keyword. Client can select one of those results that redirect the client to the webpage that 
+                        is containing the search result.<br>
+                        <strong>Priority: &emsp;</strong> High<br>
+                    </p>
+
+                    <table>
+                        <tr>
+                            <th>Actor actions</th>
+                            <th>System responses</th>
+                        </tr>
+                        <tr>
+                        <td>1. Client clicks on the link to visit the website.</td>
+                        <td>2. Redirects to the destination page that is containing the matching result.</td>
+                        </tr>
+
+                    </table>
+                    <br>
+                    <strong>Alternative courses: </strong>
+                    <p>
+                       Step 1-2: In case no matching result found, the client cannot visit any webpage.
+                    </p>
+
+
+                    <h2 id="Export search result">
+                        <span>4.7 </span>
+                        <span>Export search result</span>
+                    </h2>
+                    <p>
+                        <strong>Use Case Name: &emsp;</strong> Export search result.<br>
+                        <strong>Precondition: &emsp;</strong> Client must do search operation that should find some matching results.<br>
+                        <strong>Actor(s): &emsp;</strong> Client<br>
+                        <strong>Goal: &emsp;</strong> To save the search results in local machine.<br>
+                    </p>
+                    <p>
+                        <strong>Overview: &emsp;</strong> Client can save all the matching result of his search result
+                        into a xml file for later usage.<br>
+                        <strong>Priority: &emsp;</strong> Medium<br>
+                    </p>
+
+
+                    <table>
+                        <tr>
+                            <th>Actor actions</th>
+                            <th>System responses</th>
+                        </tr>
+                        <tr>
+                            <td>1. Client clicks on the “Export” button to save the search result as xml file.</td>
+                            <td>2. System converts the search results into xml file and being downloaded.</td>
+                        </tr>
+
+                    </table>
+                    <br>
+                    <strong>Alternative courses: </strong>
+                    <p>
+                        Step 1-2: In case of no matching result this operation is not applicable.
+                    </p>
+
+
+                    <h2 id="Logout">
+                        <span>4.8 </span>
+                        <span>Logout</span>
+                    </h2>
+                    <p>
+                        <strong>Use Case Name: &emsp;</strong> Logout<br>
+                        <strong>Precondition: &emsp;</strong> Users must be logged in to the system<br>
+                        <strong>Actor(s): &emsp;</strong> Client, Admin<br>
+                        <strong>Goal: &emsp;</strong> To end the user's session<br>
+                    </p>
+                    <p>
+                        <strong>Overview: &emsp;</strong> User click on the logout button and this will end his session
+                        on the website.<br>
+                        <strong>Priority: &emsp;</strong> Low<br>
+                    </p>
+
+                    <br><br>
+
+
+                    <table>
+                        <tr>
+                            <th>Actor actions</th>
+                            <th>System responses</th>
+                        </tr>
+                        <tr>
+                            <td>1. User click on the logout button </td>
+                            <td>2. The system will end the user session and redirect him to the login page.</td>
+
+                        </tr>
+
+
+                    </table>
+                    <br>
+                    <strong>Alternative courses: </strong>
+                    <p>
+                        Not applicable.
+                    </p>
+
+
+                    <h2 id="Add new crawling method as plugin">
+                        <span>4.9 </span>
+                        <span>Add new crawling method as plugin</span>
+                    </h2>
+                    <p>
+                        <strong>Use Case Name: &emsp;</strong> Add new crawling method as plugin<br>
+                        <strong>Precondition: &emsp;</strong> Admin must be logged in to the system.<br>
+                        <strong>Actor(s): &emsp;</strong> Admin<br>
+                        <strong>Goal: &emsp;</strong> To add new crawling method as plugin.<br>
+                    </p>
+                    <p>
+                        <strong>Overview: &emsp;</strong> Admin choose to add new search method for webcrawling. So he
+                        add a new type of
+                        crawling method as plugin and the system let him that plugin added successfully.<br>
+                        <strong>Priority: &emsp;</strong> Medium<br>
+                    </p>
+
+
+                    <table>
+                        <tr>
+                            <th>
+                                <center>Actor actions</center>
+                            </th>
+                            <th>
+                                <center>System responses</center>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>1. Admin click on the crawling method button. </td>
+                            <td>2. The system will show the current crawling method as well as add new crawling button.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td >3. Admin then click on the add crawling method. </td>
+                            <td>4. The system will show upload plugin field.</td>
+                        </tr>
+
+                        <tr>
+                            <td>5. Admin upload the downloaded crawling method plugin and click on submit.
+                            </td>
+                            <td>6. System shows new plugin added successfully and update crawling method. </td>
+                        </tr>
+
+
+                    </table>
+                    <br>
+                    <strong>Alternative courses: </strong>
+                    <p>
+                        Steps 5-6: The crawling method already exist in that case system will ask for confirmation to
+                        overwrite previous
+                        crawling method.<br>
+                        Steps 5-6: System does not identify the plugin and show error message.
+                    </p>
+
+
+
+
+                    <h2 id="Index contents of url form search cluster">
+                        <span>4.10 </span>
+                        <span>Index content of url form search cluster</span>
+                    </h2>
+                    <p>
+                        <strong>Use Case Name: &emsp;</strong> Index content of url form search cluster<br>
+                        <strong>Precondition: &emsp;</strong> User must create search cluster and modify own
+                        search cluster.
+                        operation.<br>
+                        <strong>Actor(s): &emsp;</strong> System<br>
+                        <strong>Goal: &emsp;</strong> To index the url content for efficient and fast search.<br>
+                    </p>
+                    <p>
+                        <strong>Overview: &emsp;</strong> System will crawl through user given website and fetch the
+                        content. After
+                        fecthing system will automatically index those content and store them in a server.<br>
+                        <strong>Priority: &emsp;</strong> High<br>
+                    </p>
+
+
+                    <table>
+                        <tr>
+                            <th>Actor actions</th>
+                            <th>System responses</th>
+                        </tr>
+                        <tr>
+                            <td>1. Client creates or modifies the search cluster.</td>
+                            <td>2. System will crawl through those website and grab the content. Then an automated index
+                                operation will be
+                                performed by the system and the index will be stored in a server.</td>
+                        </tr>
+                    </table>
+
+                    <br>
+                    <strong>Alternative courses: </strong>
+                    <p>
+                        Step 1-2: User add invalid url and system crawl throguh those url in that case index operation
+                        will be
+                        terminated.<br>
+                    </p>
+
+
+
+                    <h2 id="Inform users when their cluster(s) ready to do search operation">
+                        <span>4.11 </span>
+                        <span>Inform users when their cluster(s) are ready to do search operation</span>
+                    </h2>
+                    <p>
+                        <strong>Use Case Name: &emsp;</strong> Inform users when their cluster(s) ready to do search
+                        operation<br>
+                        <strong>Precondition: &emsp;</strong> System must perform index content of url(s) from search
+                        clusters.<br>
+                        <strong>Actor(s): &emsp;</strong> System<br>
+                        <strong>Goal: &emsp;</strong> To inform the client that the search cluseter are ready for
+                        searching.<br>
+                    </p>
+                    <p>
+                        <strong>Overview: &emsp;</strong> System do the indexing url content in batch. After completing
+                        the operation
+                        the system will automitically inform the user that they can now use the search cluster for
+                        search operation.<br>
+                        <strong>Priority: &emsp;</strong> Low<br>
+                    </p>
+
+
+                    <table>
+                        <tr>
+                            <th>
+                                Actor actions
+                            </th>
+                            
+                            <th>
+                                System responses
+                            </th>
+                        
+                        <tr>
+                            <td>1. Client create and modify the search cluster.</td>
+                            <td>2. System index the url content in batch and after finishing the task an automated
+                                message will be sent to
+                                the client that search cluster is ready now.</td>
+                        </tr>
+                    </table>
+
+                    <br>
+                    <strong>Alternative courses: </strong>
+                    <p>
+                        Step 1-2: User add invalid url and system can not do index operation so invalid message will be
+                        sent.
+                    </p>
+
+
+                    <!-- Section 5 -->
+                    <h1 id="Other Nonfunctional Requirements">
+                        <span>5.</span>
+                        <span>Other Nonfunctional Requirements</span>
+                    </h1>
+
+
+                    <h2 id="Performance Requirements">
+                        <span>5.1 </span>
+                        <span>Performance Requirements</span>
+                    </h2>
+                    <p>A cluster defined by a user may take up to 24 hours before it becomes searchable. Crawling also
+                        depends on the performance of the crawling framework that is used, in this context, scrapy. For
+                        example, the Scrapy Benchmarking documentation states that scrapy may be able to crawl about
+                        3000 pages per minute. Performance may vary depend on how much workload the crawler may take on
+                        and how well it’s written. </p>
+
+                    <h2 id="Safety Requirements">
+                        <span>5.2 </span>
+                        <span>Safety Requirements</span>
+                    </h2>
+                    <p>Users of Re-search are advised to only provide for links of websites that allow crawling
+                        their webpages. Users are expected to be responsible individuals whom respect and follow the
+                        crawling policies of the links that they provide. </p>
+
+                    <h2 id="Security Requirements">
+                        <span>5.3 </span>
+                        <span>Security Requirements</span>
+                    </h2>
+                    <p>The software requires an email, a password for each user to register and also login to use the
+                        software. There is also another option for users to sign up/authenticate with their Gmails.
+                        Crawling restrictions provided by particular websites to serve crawling requests may also be an
+                        issue in certain contexts. As Re-search is made by following the Fair Usage Policies (FUP),
+                        the software cannot display the contents that it crawls due to the issues of copyrights. </p>
+
+                    <h2 id="Software Quality Attributes">
+                        <span>5.4 </span>
+                        <span>Software Quality Attributes</span>
+                    </h2>
+                    <p>The software quality attributes of Re-search are:
+                    </p>
+                    <ul>
+                        <li><strong>Availability</strong>:: The software will be available to use at all times for its
+                            users except for scheduled maintenance of servers as mentioned in the Business Rules
+                            section.</li>
+                        <li><strong>Correctness</strong>: The software will provide accurate results based on the links
+                            the users provide in clusters and the keywords they will use when they need to search.</li>
+                        <li><strong>Reusability:</strong> The users will be able to reuse and search many times on the
+                            clusters that they create.</li>
+
+                    </ul>
+                    <h2 id="Business Rules">
+                        <span>5.5 </span>
+                        <span>Business Rules</span>
+                    </h2>
+                    <p>The software will be unavailable to use at times for maintenance of the servers for 2 hours every
+                        month. As of the release of Re-search’s version 1.0, the software is intended to be free
+                        for its users and does not contain any added premium features or plugins.</p>
+
+                    <!-- Section 6 -->
+                    <h1 id="Other Requirements">
+                        <span>6. </span>
+                        <span>Other Requirements</span>
+                    </h1>
+                        <p>Not applicable.</p>
+                    
+                    <h1 id="Appendix"></h1>
+
+                    <h1 class="text-danger" id="Appendix A: Glossary">Appendix A: Glossary</h1>
+                    <ul>
+                        <p>
+                            <li><strong>Data Crawling Ethics: </strong>Repeated requests of the web pages can slow down
+                                the webserver. Sometimes aggressive
+                                scraping may lead to functional issues for the website. Besides, websites may contain
+                                materials with copyright claims.
+                                Making copies of those copyright materials is considered as an illegal activity. So, web
+                                crawling should be done at a disruptive
+                                rate by maintaining website's terms and conditions so that it does not slow down the
+                                website and hamper it's regular activities.<br>
+                            </li>
+                            <li><strong>Fair usage policy: </strong> Web scraping and crawling is not illegal unless it
+                                is done
+                                in an unethical way. Scraping private informations from website and exposing it publicly
+                                falls under
+                                illegal activity. Scrapped data should not be used for commercial purposes. <br>
+                            </li>
+                            <li><strong>API: </strong>Application Programming Interface (API) provides an interface
+                                between two pieces of software to
+                                communicate. API allows an application to access data and interact with external
+                                components of the software.<br>
+                            </li>
+                            <li><strong>Framework: </strong>Framework is used as a foundation for application
+                                developments. It allows application
+                                developers to develop new features in a well-structured manner. Framework provides
+                                generic functionality that can be
+                                changed to use for specific purposes.<br>
+                            </li>
+                        </p>
+                    </ul>
+                    
+                   <h1 class="text-danger" id="Appendix B: Analysis Models">Appendix B: Analysis Models</h1>
+                  <p>Not applicable.</p>
+
+                  <h1 class="text-danger" id="Appendix C: To Be Determined List">Appendix C: To Be Determined List</h1>
+                  <p>Not applicable.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        </div>
+        </div>
+
+    </body>
+
+</html>
