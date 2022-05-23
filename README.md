@@ -65,5 +65,16 @@ The user will be able to add a URL, define the depth of crawl, and the type of d
 <p align="center">
   <img height=450 width=1000 src="https://user-images.githubusercontent.com/63312173/169751127-abe9a03b-f041-4209-ad44-bf4b3e89391a.png">
 </p>
+Users can now add multiple URLs inside a cluster and set their parameters accordingly. All of the scraped content is saved in individual Elasticsearch indexes for individual clusters.
+<p align="center">
+  <img height=450 width=1000 src="https://user-images.githubusercontent.com/63312173/169751377-23b236d1-e83c-4439-81ba-883b3d9bc587.PNG">
+</p>
+After scraped content is successfully stored in an index, users can perform searching inside those indexes for the data they scraped. The search function works perfectly and returns accurate hit links for a search query and the desired content as well. The users will be able to export the obtained search results as a CSV
+file. The CSV file will contain the links as of now, but can be easily implemented including or just the content itself by little adjustment. There is voice searching implemented as well inside the clusters, and users shall be able to conveniently just speak at their microphones and perform fast, accurate searching with voice
+commands. This was implemented using a simple Javascript function.
+<p align="center">
+  <img height=450 width=1000 src="https://user-images.githubusercontent.com/63312173/169751549-2de34cf7-b5ae-4b46-9bf9-57ec2bf40a82.png">
+</p>
+   ![image]()
 
 <i>
