@@ -51,7 +51,7 @@ was used to enable easy social login feature for the users to use this app.<br>
 All of the authentications: social login, login, sign-up, sign out, resetting passwords, adding secondary emails, verifying e-mail IDs were handled using Django Allauth. The corresponding html files were designed and implemented according with the help of relevant tools. The following is a snapshot of the UI of the login
 page.
 <p align="center">
-  <img height=800 width=500 src="https://user-images.githubusercontent.com/63312173/169750128-4630c101-559d-4c50-8402-9e5a8f4ca2af.PNG">
+  <img height=400 width=800 src="https://user-images.githubusercontent.com/63312173/169750128-4630c101-559d-4c50-8402-9e5a8f4ca2af.PNG">
 </p>
 
 <i>
