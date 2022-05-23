@@ -55,7 +55,7 @@ page and registration.
 </p>
 After a user successfully has logged in to the system, whether by logging in or registering for the first time, the user is able to successfully create “search clusters” with a title and the description for a particular cluster initially. Then the user can create more clusters if they want to. 
 <p align="center">
-  <img height=450 width=800 src="https://user-images.githubusercontent.com/63312173/169750441-ef46fd17-87af-4f87-abfe-159f0aee5886.PNG">
+  <img height=350 width=800 src="https://user-images.githubusercontent.com/63312173/169750441-ef46fd17-87af-4f87-abfe-159f0aee5886.PNG">
 </p>
 The cluster view page is successfully created with relevant views and html files. There are other options such as search, view, edit, delete are kept on the UI, and they both successfully render those requests with the help of the relevant views and corresponding html pages. The cluster view page has pagination support, and will have multiple pages of clusters if the total amount of clusters exceeds for a particular page. The saved clusters will be stored into the database for particular users in the form of Cluster table, which was a model as we have implemented.
 <p align="center">
