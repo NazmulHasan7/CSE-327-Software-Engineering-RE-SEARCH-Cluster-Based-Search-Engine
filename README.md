@@ -71,10 +71,9 @@ Users can now add multiple URLs inside a cluster and set their parameters accord
 </p>
 After scraped content is successfully stored in an index, users can perform searching inside those indexes for the data they scraped. The search function works perfectly and returns accurate hit links for a search query and the desired content as well. The users will be able to export the obtained search results as a CSV
 file. The CSV file will contain the links as of now, but can be easily implemented including or just the content itself by little adjustment. There is voice searching implemented as well inside the clusters, and users shall be able to conveniently just speak at their microphones and perform fast, accurate searching with voice
-commands. This was implemented using a simple Javascript function.
+commands. This was implemented using a simple Javascript function. <br>
+As evaluated, all of the main functionalities of the project are working seamlessly. Now, there is an option to donate has also been implemented powered by the Paypal API and the users may donate if they wish to support.
 <p align="center">
-  <img height=450 width=1000 src="https://user-images.githubusercontent.com/63312173/169751549-2de34cf7-b5ae-4b46-9bf9-57ec2bf40a82.png">
+  <img height=450 width=1000 src="https://user-images.githubusercontent.com/63312173/169751986-e2e4a70c-b70f-4f2b-9ac7-465496e17933.png">
 </p>
-   ![image]()
-
 <i>
