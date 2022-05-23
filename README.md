@@ -41,4 +41,10 @@ Beautifulsoup (for scraping and crawling) and Powerful Python libraries like Bea
 was used to enable easy social login feature for the users to use this app.<br>
 
 <b>IDE/Text Editor:</b> Visual Studio Code VS Code was the only code editor that was used in the development of this project    
+
+# Use Case Diagram
+<p align="center">
+  <img height=700 width=400 src="https://user-images.githubusercontent.com/63312173/169749428-d1a91fe6-e081-41ab-ade2-afa415094a18.png">
+</p>
+
 <i>
