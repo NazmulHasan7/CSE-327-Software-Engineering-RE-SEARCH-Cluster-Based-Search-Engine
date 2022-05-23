@@ -25,4 +25,20 @@ In this data-driven technological era, there is an abundance of data readily acc
 <br><i>The web application RE-SEARCH would also aim to fulfill other quality attributes such as:</i><br>
    <b>Availability:</b> This software will be available to use at all times for its users as the data would be indexed in a 3rd party service, Elasticsearch and would also provide search functionalities. Temporary unavailability may happen for scheduled maintenance.<br>
    <b>Correctness:</b> This software will provide accurate results based on the links the users provide in clusters and the keywords they will use when they need to search.<br>
-   <b>Reusability:</b> The users will be able to reuse and search many times on the clusters that they create.<br><i>
+   <b>Reusability:</b> The users will be able to reuse and search many times on the clusters that they create.<br>
+    
+# Tools needed
+<b>Programming/Markup Languages:</b> Django (Python framework for the backend), HTML, CSS, and JavaScript (for the frontend)
+Django was the framework that glued everything together in the project. Django was used to created models which are tables in the database. Django views were made used of to render http requests from the frontend. Django Rest Framework was used to build the APIs. HTML and CSS were the main two technologies that were used to build the frontend. Javascript was used to implement voice searching functionality.<br>
+
+<b>Libraries (Python):</b> Textract (For extracting data), Django-allauth (For user authentication),
+Beautifulsoup (for scraping and crawling) and Powerful Python libraries like Beautifulsoup, Textract will be used to build our crawler which will crawl the links based on the inputs and the input parameters the users set.<br>
+
+<b>Database:</b> Sqlite3 Django’s default Sqlite3 database is used in the project to store relevant data/models.<br>
+<b>Search Engine:</b> Elasticsearch. Elasticsearch is the core of the project. It was used to provide searching functionalities inside the clusters. Elasticsearch was also used to store the scraped content in Elasticsearch indexes.
+    
+<b>External APIs/Services:</b> Paypal API, Gmail API. Paypal API helped facilitating donation options to support the developers of this project. Gmail API
+was used to enable easy social login feature for the users to use this app.<br>
+
+<b>IDE/Text Editor:</b> Visual Studio Code VS Code was the only code editor that was used in the development of this project    
+<i>
